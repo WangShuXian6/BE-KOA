@@ -1,0 +1,31 @@
+{
+  "name": "be-koa",
+  "version": "0.0.1",
+  "description": "an server by koa",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WangShuXian6/BE-KOA.git"
+  },
+  "keywords": [
+    "nodejs",
+    "koa",
+    "login",
+    "token"
+  ],
+  "author": "wangshuxian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WangShuXian6/BE-KOA/issues"
+  },
+  "homepage": "https://github.com/WangShuXian6/BE-KOA#readme",
+  "devDependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "log4js": "^2.5.3"
+  }
+}

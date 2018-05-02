@@ -1,0 +1,4 @@
+# Auto detect text files and perform LF normalization
+# git config --global core.autocrlf false
+text=LF
+text eol=lf
