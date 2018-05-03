@@ -1,7 +1,5 @@
 const HomeService = require('../service/home')
-const table = require('../config')
-const goodsList = require('../config')
-const cuisine = require('../config')
+const config = require('../config')
 
 module.exports = {
   index: async (ctx, next) => {
@@ -38,33 +36,33 @@ module.exports = {
   },
   table: async (ctx, next) => {
     let dinning_table_number = ctx.params.number
-    ctx.response.type = 'application/json'
+    ctx.set('Content-Type', 'application/json')
     if (dinning_table_number !== '001') {
-      ctx.response.body = table.fail
+      ctx.response.body = JSON.stringify(config.table.fail)
     } else if (dinning_table_number === '001') {
-      ctx.response.body = table.success
+      ctx.response.body = JSON.stringify(config.table.success)
     } else if (dinning_table_number === '002') {
-      ctx.response.body = table.tableFail
+      ctx.response.body = JSON.stringify(config.table.tableFail)
     }
   },
   goods: async (ctx, next) => {
-    let store_number = ctx.params.number
-    console.log(store_number)
-    ctx.response.type = 'application/json'
+    let store_number = parseInt(ctx.params.number)
+    ctx.set('Content-Type', 'application/json')
     if (store_number !== 234) {
-      ctx.response.body = goodsList.fail
+      ctx.response.body = JSON.stringify(config.goodsList.fail)
     } else if (store_number === 234) {
-      ctx.response.body = goodsList.success
+      ctx.response.body = JSON.stringify(config.goodsList.success)
     }
   },
   cuisine: async (ctx, next) => {
     let cuisine_id = ctx.params.id
+    ctx.set('Content-Type', 'application/json')
     if (cuisine_id >= 90) {
-      ctx.response.body = cuisine.fail
+      ctx.response.body = JSON.stringify(config.cuisine.fail)
     } else if (cuisine_id < 20) {
-      ctx.response.body = cuisine.successPackage
+      ctx.response.body = JSON.stringify(config.cuisine.successPackage)
     } else if (cuisine_id >= 20 && cuisine_id < 90) {
-      ctx.response.body = cuisine.success
+      ctx.response.body = JSON.stringify(config.cuisine.success)
     }
   }
 }
