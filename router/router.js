@@ -12,6 +12,12 @@ module.exports = (app) => {
 
   router.post('/user/register', HomeController.register)
 
+  router.get('/table/:number', HomeController.table)
+
+  router.get('/goods/:number', HomeController.goods)
+
+  router.get('/cuisine/:id', HomeController.cuisine)
+
   app.use(router.routes())
       .use(router.allowedMethods())
 }
