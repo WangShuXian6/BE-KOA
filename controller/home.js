@@ -36,7 +36,7 @@ module.exports = {
   },
   table: async (ctx, next) => {
     let dinning_table_number = ctx.params.number
-    ctx.set('Content-Type', 'application/json')
+    ctx.set('Content-Type', 'application/json;charset=UTF-8')
     if (dinning_table_number !== '001') {
       ctx.response.body = JSON.stringify(config.table.fail)
     } else if (dinning_table_number === '001') {
@@ -47,7 +47,8 @@ module.exports = {
   },
   goods: async (ctx, next) => {
     let store_number = parseInt(ctx.params.number)
-    ctx.set('Content-Type', 'application/json')
+    ctx.set('Content-Type', 'application/json;charset=UTF-8')
+    ctx.set('')
     if (store_number !== 234) {
       ctx.response.body = JSON.stringify(config.goodsList.fail)
     } else if (store_number === 234) {
@@ -56,7 +57,7 @@ module.exports = {
   },
   cuisine: async (ctx, next) => {
     let cuisine_id = ctx.params.id
-    ctx.set('Content-Type', 'application/json')
+    ctx.set('Content-Type', 'application/json;charset=UTF-8')
     if (cuisine_id >= 90) {
       ctx.response.body = JSON.stringify(config.cuisine.fail)
     } else if (cuisine_id < 20) {
