@@ -65,5 +65,9 @@ module.exports = {
     } else if (cuisine_id >= 20 && cuisine_id < 90) {
       ctx.response.body = JSON.stringify(config.cuisine.success)
     }
+  },
+  carousel: async (ctx, next) => {
+    ctx.set('Content-Type', 'application/json;charset=UTF-8')
+    ctx.response.body = JSON.stringify(config.carousel.success)
   }
 }

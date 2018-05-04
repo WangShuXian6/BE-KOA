@@ -18,6 +18,8 @@ module.exports = (app) => {
 
   router.get('/cuisine/:id', HomeController.cuisine)
 
+  router.get('/carousel', HomeController.carousel)
+
   app.use(router.routes())
       .use(router.allowedMethods())
 }
