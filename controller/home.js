@@ -27,6 +27,12 @@ module.exports = {
       `
   },
   register: async (ctx, next) => {
+    console.log('ctx.request.body',ctx.request.body)
+    console.log('ctx.request.body2',ctx.request.body.c.e.ff)
+    //console.log('ctx.request.body parse',JSON.parse(ctx.request.body))
+    console.log('ctx.request.query',ctx.request.query)
+    console.log(ctx.request.query)
+    console.log(ctx.request.querystring)
     let {
       name,
       password
